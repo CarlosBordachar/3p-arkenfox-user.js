@@ -214,3 +214,5 @@ user_pref("signon.firefoxRelay.feature", "disabled");
 user_pref("signon.generation.enabled", false);
 /* disable password breach alerts */
 user_pref("signon.management.page.breach-alerts.enabled", false);
+/* enable groups by profile in taskbar */
+user_pref("taskbar.grouping.useprofile", true);
