@@ -138,8 +138,6 @@ user_pref("browser.download.folderList", 1); // 1=downloads
  /* [WHY] Only cross-origin referers (1600s) need control */
  user_pref("network.http.sendRefererHeader", 2); // 2=send on all requests
  user_pref("network.http.referer.trimmingPolicy", 0); // 0=send the full URL
-/* 7013: disable Clipboard API */
-user_pref("dom.event.clipboardevents.enabled", false); // FALSE
 /* 7014: disable System Add-on updates */
  user_pref("extensions.systemAddon.update.enabled", false); // FALSE
  user_pref("extensions.systemAddon.update.url", ""); // empty
