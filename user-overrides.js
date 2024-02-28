@@ -214,3 +214,21 @@ user_pref("signon.generation.enabled", false);
 user_pref("signon.management.page.breach-alerts.enabled", false);
 /* enable groups by profile in taskbar */
 user_pref("taskbar.grouping.useprofile", true);
+
+/*** [SECTION 11000]: WEBSITE BREAKAGE FIX 
+   Uncomment desired fix
+***/
+/* website: comafi.com.ar 
+ * business: bank
+ * breakage: error SSL_ERROR_UNSAFE_NEGOTIATION 
+ * pref involved: security.ssl.require_safe_negotiation
+ * old value: true 
+ * new value: false */
+// user_pref("security.ssl.require_safe_negotiation", false);
+/* website: swissmedical.com.ar 
+ * business: health
+ * breakage: login doesn't work 
+ * pref involved: privacy.resistFingerprinting
+ * old value: true 
+ * new value: false */
+// user_pref("privacy.resistFingerprinting", false); 
