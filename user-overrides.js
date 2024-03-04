@@ -77,6 +77,8 @@ user_pref("media.eme.enabled", true); // Set TRUE (para Prime Video)
 /*** [SECTION 2600]: MISCELLANEOUS ***/
 
 /** DOWNLOADS ***/
+/* 2654: enable user interaction for security by always asking how to handle new mimetypes [FF101+] ***/
+user_pref("browser.download.always_ask_before_handling_new_types", false); // Set FALSE
 
 /** EXTENSIONS ***/
 
