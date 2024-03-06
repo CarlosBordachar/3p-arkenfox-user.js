@@ -216,6 +216,10 @@ user_pref("signon.generation.enabled", false);
 user_pref("signon.management.page.breach-alerts.enabled", false);
 /* enable groups by profile in taskbar */
 user_pref("taskbar.grouping.useprofile", true);
+/* enable custom css profiles */
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+/* enable compact mode option in the customize UI density picker */
+user_pref("browser.compactmode.show", true);
 
 /*** [SECTION 11000]: WEBSITE BREAKAGE FIX 
    Uncomment desired fix
