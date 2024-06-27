@@ -16,9 +16,9 @@ user_pref("browser.newtabpage.enabled", true); // Set TRUE
 
 /*** [SECTION 0200]: GEOLOCATION / LANGUAGE / LOCALE ***/
 /* 0210: set preferred language for displaying pages */
-user_pref("intl.accept_languages", "es-AR, es"); // es-AR, es
+// user_pref("intl.accept_languages", "es-AR, es"); // es-AR, es
 /* 0211: use en-US locale regardless of the system or region locale */
-user_pref("javascript.use_us_english_locale", false); // Set FALSE
+// user_pref("javascript.use_us_english_locale", false); // Set FALSE
 
 /*** [SECTION 0300]: QUIETER FOX ***/
 
