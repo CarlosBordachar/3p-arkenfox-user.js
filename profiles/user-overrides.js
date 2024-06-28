@@ -15,10 +15,8 @@ user_pref("browser.startup.homepage", "about:home"); // about:home
 user_pref("browser.newtabpage.enabled", true); // Set TRUE
 
 /*** [SECTION 0200]: GEOLOCATION / LANGUAGE / LOCALE ***/
-/* 0210: set preferred language for displaying pages */
+/* 0210: set preferred language for displaying pages (4506) */
 // user_pref("intl.accept_languages", "es-AR, es"); // es-AR, es
-/* 0211: use en-US locale regardless of the system or region locale */
-// user_pref("javascript.use_us_english_locale", false); // Set FALSE
 
 /*** [SECTION 0300]: QUIETER FOX ***/
 
@@ -31,9 +29,7 @@ user_pref("browser.safebrowsing.downloads.remote.enabled", true); // Set TRUE
 /*** [SECTION 0700]: DNS / DoH / PROXY / SOCKS / IPv6 ***/
 
 /*** [SECTION 0800]: LOCATION BAR / SEARCH BAR / SUGGESTIONS / HISTORY / FORMS ***/
-/* 0801: disable location bar using search */
-user_pref("keyword.enabled", true); // Set TRUE
-/* 0804: disable live search suggestions */
+/* 0803: disable live search suggestions */
 //user_pref("browser.search.suggest.enabled", true); // Set TRUE
 //user_pref("browser.urlbar.suggest.searches", true); // Set TRUE
 /* 0820: disable coloring of visited links */
@@ -44,7 +40,7 @@ user_pref("layout.css.visited_links_enabled", true); // Set TRUE
 /*** [SECTION 1000]: DISK AVOIDANCE ***/
 /* 1001: disable disk cache */
 user_pref("browser.cache.disk.enable", true); // Set TRUE
-/* 1006: disable favicons in shortcuts */
+/* 1006: disable favicons in shortcuts [WINDOWS] */
 user_pref("browser.shell.shortcutFavicons", false); // NO override, pero por las dudas si quiero iconos (favicon) en accesos directos, en tal caso debe ser TRUE su valor.
 
 /*** [SECTION 1200]: HTTPS (SSL/TLS / OCSP / CERTS / HPKP) ***/
@@ -58,19 +54,13 @@ user_pref("browser.shell.shortcutFavicons", false); // NO override, pero por las
 
 /** UI (User Interface) ***/
 
-/*** [SECTION 1400]: FONTS ***/
-
-/*** [SECTION 1600]: HEADERS / REFERERS ***/
-/* 1601: control when to send a cross-origin referer */
-user_pref("network.http.referer.XOriginPolicy", 1); // 1=only if base domains match
+/*** [SECTION 1600]: REFERERS ***/
 
 /*** [SECTION 1700]: CONTAINERS ***/
 /* 1702: set behavior on "+ Tab" button to display container menu on left click [FF74+] */
 user_pref("privacy.userContext.newTabContainerOnLeftClick.enabled", true); // Set TRUE
 
 /*** [SECTION 2000]: PLUGINS / MEDIA / WEBRTC ***/
-/* 2022: disable all DRM content (EME: Encryption Media Extension) */
-user_pref("media.eme.enabled", true); // Set TRUE (para Prime Video)
 
 /*** [SECTION 2400]: DOM (DOCUMENT OBJECT MODEL) ***/
 
@@ -83,30 +73,33 @@ user_pref("browser.download.always_ask_before_handling_new_types", false); // Se
 /** EXTENSIONS ***/
 
 /*** [SECTION 2700]: ETP (ENHANCED TRACKING PROTECTION) ***/
+/* (7016) customize ETP settings */
 
 /*** [SECTION 2800]: SHUTDOWN & SANITIZING ***/
 /* 2810: enable Firefox to clear items on shutdown */
 user_pref("privacy.sanitize.sanitizeOnShutdown", false); // Set FALSE (en false deja sin efecto 2811, 2815)
 
-/** SANITIZE ON SHUTDOWN: IGNORES "ALLOW" SITE EXCEPTIONS ***/
+/** SANITIZE ON SHUTDOWN: IGNORES "ALLOW" SITE EXCEPTIONS | v2 migration is FF128+ ***/
 // /* 2811: set/enforce what items to clear on shutdown (if 2810 is true) [SETUP-CHROME] */
 // user_pref("privacy.clearOnShutdown.cache", false); // Set FALSE
 // user_pref("privacy.clearOnShutdown.downloads", false); // Set FALSE
 // user_pref("privacy.clearOnShutdown.formdata", true); // TRUE
 // user_pref("privacy.clearOnShutdown.history", false); // Set FALSE
-// user_pref("privacy.clearOnShutdown.sessions", false); // Set FALSE
 
-/** SANITIZE ON SHUTDOWN: RESPECTS "ALLOW" SITE EXCEPTIONS FF103+ ***/
+/** SANITIZE ON SHUTDOWN: RESPECTS "ALLOW" SITE EXCEPTIONS FF103+ | v2 migration is FF128+ ***/
 /* 2815: set "Cookies" and "Site Data" to clear on shutdown (if 2810 is true) [SETUP-CHROME] */
 // user_pref("privacy.clearOnShutdown.cookies", false); // Set FALSE
 // user_pref("privacy.clearOnShutdown.offlineApps", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown.sessions", false); // Set FALSE
 
 /** SANITIZE MANUAL: IGNORES "ALLOW" SITE EXCEPTIONS ***/
-/* 2822: reset default "Time range to clear" for "Clear Recent History" (2820) */
+/* 2840: set "Time range to clear" for "Clear Data" (2820) and "Clear History" (2830) */
 user_pref("privacy.sanitize.timeSpan", 1); //1=last hour
 
-/*** [SECTION 4500]: RFP (RESIST FINGERPRINTING)
-/* 4501: enable privacy.resistFingerprinting */
+/*** [SECTION 4000]: FPP (fingerprintingProtection) ***/
+
+/*** [SECTION 4500]: RFP (RESIST FINGERPRINTING) ***/
+/* 4501: enable RFP */
  // user_pref("privacy.resistFingerprinting", false); // Set FALSE
  /* 4502: set new window size rounding max values */
 user_pref("privacy.window.maxInnerWidth", 1200); // 1200
@@ -125,8 +118,14 @@ user_pref("browser.chrome.site_icons", true); // TRUE
 user_pref("places.history.enabled", true); // TRUE
 /* 5016: discourage downloading to desktop */
 user_pref("browser.download.folderList", 1); // 1=downloads
+/* 5021: disable location bar using search */
+user_pref("keyword.enabled", true); // Set TRUE
 
 /*** [SECTION 5500]: OPTIONAL HARDENING ***/
+/* 5508: disable all DRM content (EME: Encryption Media Extension) */
+user_pref("media.eme.enabled", true); // Set TRUE (para Prime Video)
+/* 5510: control when to send a cross-origin referer */
+user_pref("network.http.referer.XOriginPolicy", 1); // 1=only if base domains match
 
 /*** [SECTION 6000]: DON'T TOUCH ***/
 
@@ -137,7 +136,7 @@ user_pref("browser.download.folderList", 1); // 1=downloads
 /* 7005: disable SSL session IDs */
  user_pref("security.ssl.disable_session_identifiers", true); // TRUE
  /* 7007: referers */
- /* [WHY] Only cross-origin referers (1600s) need control */
+ /* [WHY] Only cross-origin referers (1602, 5510) matter */
  user_pref("network.http.sendRefererHeader", 2); // 2=send on all requests
  user_pref("network.http.referer.trimmingPolicy", 0); // 0=send the full URL
 /* 7014: disable System Add-on updates */
@@ -147,7 +146,6 @@ user_pref("browser.download.folderList", 1); // 1=downloads
 user_pref("privacy.donottrackheader.enabled", true); // TRUE
 /* 7018: disable Web Notifications */
 user_pref("dom.webnotifications.enabled", false); // FALSE
-user_pref("dom.webnotifications.serviceworker.enabled", false); // FALSE
 /* 7019: disable Push Notifications */
 user_pref("dom.push.enabled", false); // FALSE
 
