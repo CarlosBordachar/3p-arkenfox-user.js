@@ -59,6 +59,10 @@ user_pref("browser.shell.shortcutFavicons", false); // NO override, pero por las
 /*** [SECTION 1700]: CONTAINERS ***/
 /* 1702: set behavior on "+ Tab" button to display container menu on left click [FF74+] */
 user_pref("privacy.userContext.newTabContainerOnLeftClick.enabled", true); // Set TRUE
+/* 1703: set external links to open in site-specific containers ***/
+user_pref("browser.link.force_default_user_context_id_for_external_opens", true); // Set TRUE 
+/* (https://bugzilla.mozilla.org/show_bug.cgi?id=1874599#c18 
+    https://github.com/stoically/temporary-containers/issues/633#issuecomment-2061133676) */
 
 /*** [SECTION 2000]: PLUGINS / MEDIA / WEBRTC ***/
 
@@ -82,15 +86,18 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", false); // Set FALSE (en false 
 /** SANITIZE ON SHUTDOWN: IGNORES "ALLOW" SITE EXCEPTIONS | v2 migration is FF128+ ***/
 // /* 2811: set/enforce what items to clear on shutdown (if 2810 is true) [SETUP-CHROME] */
 // user_pref("privacy.clearOnShutdown.cache", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown_v2.cache", false);  // Set FALSE
 // user_pref("privacy.clearOnShutdown.downloads", false); // Set FALSE
 // user_pref("privacy.clearOnShutdown.formdata", true); // TRUE
 // user_pref("privacy.clearOnShutdown.history", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); // set FALSE
 
 /** SANITIZE ON SHUTDOWN: RESPECTS "ALLOW" SITE EXCEPTIONS FF103+ | v2 migration is FF128+ ***/
 /* 2815: set "Cookies" and "Site Data" to clear on shutdown (if 2810 is true) [SETUP-CHROME] */
 // user_pref("privacy.clearOnShutdown.cookies", false); // Set FALSE
 // user_pref("privacy.clearOnShutdown.offlineApps", false); // Set FALSE
 // user_pref("privacy.clearOnShutdown.sessions", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false); // Set FALSE
 
 /** SANITIZE MANUAL: IGNORES "ALLOW" SITE EXCEPTIONS ***/
 /* 2840: set "Time range to clear" for "Clear Data" (2820) and "Clear History" (2830) */
@@ -106,6 +113,8 @@ user_pref("privacy.window.maxInnerWidth", 1200); // 1200
 user_pref("privacy.window.maxInnerHeight", 800); // 800
  /* 4504: enable RFP letterboxing */
 user_pref("privacy.resistFingerprinting.letterboxing", false); // Set FALSE
+/* 4506: disable RFP spoof english prompt ***/
+user_pref("privacy.spoof_english", 1); // 1=disabled (not reset preferred languages ('intl.accept_languages') (0210))
  /* 4520: disable WebGL (Web Graphics Library) */
 user_pref("webgl.disabled", false); // Set FALSE
 
