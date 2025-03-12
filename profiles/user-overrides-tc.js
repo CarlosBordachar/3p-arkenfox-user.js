@@ -85,22 +85,18 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", false); // Set FALSE (en false 
 
 /** SANITIZE ON SHUTDOWN: IGNORES "ALLOW" SITE EXCEPTIONS | v2 migration is FF128+ ***/
 // /* 2811: set/enforce what items to clear on shutdown (if 2810 is true) [SETUP-CHROME] */
-// user_pref("privacy.clearOnShutdown.cache", false); // Set FALSE
-// user_pref("privacy.clearOnShutdown_v2.cache", false);  // Set FALSE
-// user_pref("privacy.clearOnShutdown.downloads", false); // Set FALSE
-// user_pref("privacy.clearOnShutdown.formdata", true); // TRUE
-// user_pref("privacy.clearOnShutdown.history", false); // Set FALSE
-// user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); // set FALSE
+// user_pref("privacy.clearOnShutdown_v2.cache", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown_v2.downloads", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown_v2.formdata", false); // Set FALSE
 
 /** SANITIZE ON SHUTDOWN: RESPECTS "ALLOW" SITE EXCEPTIONS FF103+ | v2 migration is FF128+ ***/
 /* 2815: set "Cookies" and "Site Data" to clear on shutdown (if 2810 is true) [SETUP-CHROME] */
-// user_pref("privacy.clearOnShutdown.cookies", false); // Set FALSE
-// user_pref("privacy.clearOnShutdown.offlineApps", false); // Set FALSE
-// user_pref("privacy.clearOnShutdown.sessions", false); // Set FALSE
 // user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false); // Set FALSE
 
 /** SANITIZE MANUAL: IGNORES "ALLOW" SITE EXCEPTIONS ***/
-/* 2840: set "Time range to clear" for "Clear Data" (2820) and "Clear History" (2830) */
+/* 2840: set "Time range to clear" for "Clear Data" (2820+) and "Clear History" (2830+) */
 user_pref("privacy.sanitize.timeSpan", 1); //1=last hour
 
 /*** [SECTION 4000]: FPP (fingerprintingProtection) ***/

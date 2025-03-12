@@ -85,22 +85,18 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", false); // Set FALSE (en false 
 
 /** SANITIZE ON SHUTDOWN: IGNORES "ALLOW" SITE EXCEPTIONS | v2 migration is FF128+ ***/
 // /* 2811: set/enforce what items to clear on shutdown (if 2810 is true) [SETUP-CHROME] */
-// user_pref("privacy.clearOnShutdown.cache", false); // Set FALSE
-// user_pref("privacy.clearOnShutdown_v2.cache", false);  // Set FALSE
-// user_pref("privacy.clearOnShutdown.downloads", false); // Set FALSE
-// user_pref("privacy.clearOnShutdown.formdata", true); // TRUE
-// user_pref("privacy.clearOnShutdown.history", false); // Set FALSE
-// user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); // set FALSE
+// user_pref("privacy.clearOnShutdown_v2.cache", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown_v2.downloads", false); // Set FALSE
+// user_pref("privacy.clearOnShutdown_v2.formdata", false); // Set FALSE
 
 /** SANITIZE ON SHUTDOWN: RESPECTS "ALLOW" SITE EXCEPTIONS FF103+ | v2 migration is FF128+ ***/
 /* 2815: set "Cookies" and "Site Data" to clear on shutdown (if 2810 is true) [SETUP-CHROME] */
-// user_pref("privacy.clearOnShutdown.cookies", false); // Set FALSE
-// user_pref("privacy.clearOnShutdown.offlineApps", false); // Set FALSE
-// user_pref("privacy.clearOnShutdown.sessions", false); // Set FALSE
 // user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false); // Set FALSE
 
 /** SANITIZE MANUAL: IGNORES "ALLOW" SITE EXCEPTIONS ***/
-/* 2840: set "Time range to clear" for "Clear Data" (2820) and "Clear History" (2830) */
+/* 2840: set "Time range to clear" for "Clear Data" (2820+) and "Clear History" (2830+) */
 user_pref("privacy.sanitize.timeSpan", 1); //1=last hour
 
 /*** [SECTION 4000]: FPP (fingerprintingProtection) ***/
@@ -110,15 +106,15 @@ user_pref("privacy.fingerprintingProtection.overrides", "+AllTargets,-JSDateTime
 
 /*** [SECTION 4500]: RFP (RESIST FINGERPRINTING) ***/
 /* 4501: enable RFP */
-  user_pref("privacy.resistFingerprinting", false); // Set FALSE (active FPP (7016))
- /* 4502: set new window size rounding max values */
+user_pref("privacy.resistFingerprinting", false); // Set FALSE (active FPP (7016))
+/* 4502: set new window size rounding max values */
 user_pref("privacy.window.maxInnerWidth", 1200); // 1200
 user_pref("privacy.window.maxInnerHeight", 800); // 800
- /* 4504: enable RFP letterboxing */
+/* 4504: enable RFP letterboxing */
 user_pref("privacy.resistFingerprinting.letterboxing", false); // Set FALSE
 /* 4506: disable RFP spoof english prompt ***/
 user_pref("privacy.spoof_english", 2); // 2=enabled (sets 'en-US, en' for displaying pages and 'en-US' as locale. (0210))
- /* 4520: disable WebGL (Web Graphics Library) */
+/* 4520: disable WebGL (Web Graphics Library) */
 user_pref("webgl.disabled", false); // Set FALSE
 
 /*** [SECTION 5000]: OPTIONAL OPSEC ***/
