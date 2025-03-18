@@ -104,10 +104,13 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", false); // Set FALSE (en false 
 user_pref("privacy.sanitize.timeSpan", 1); //1=last hour
 
 /*** [SECTION 4000]: FPP (fingerprintingProtection) ***/
+/* [NOTE] FPP (fingerprintingProtection) is ignored when RFP (4501) is enabled */
+/* 4002: set global FPP overrides */
+user_pref("privacy.fingerprintingProtection.overrides", "+AllTargets,-JSDateTimeUTC"); //-JSDateTimeUTC=Don't spoof timezone
 
 /*** [SECTION 4500]: RFP (RESIST FINGERPRINTING) ***/
 /* 4501: enable RFP */
- // user_pref("privacy.resistFingerprinting", false); // Set FALSE
+user_pref("privacy.resistFingerprinting", false); // Set FALSE (active FPP (7016))
  /* 4502: set new window size rounding max values */
 user_pref("privacy.window.maxInnerWidth", 1200); // 1200
 user_pref("privacy.window.maxInnerHeight", 800); // 800
@@ -153,6 +156,9 @@ user_pref("network.http.referer.XOriginPolicy", 1); // 1=only if base domains ma
  user_pref("extensions.systemAddon.update.url", ""); // empty
 /* 7015: enable the DNT (Do Not Track) HTTP header */
 user_pref("privacy.donottrackheader.enabled", true); // TRUE
+/* 7016: customize ETP settings */
+/* enable FPP. In stric mode not necessary set. Strict mode (2701) sets these at runtime */
+user_pref("privacy.fingerprintingProtection", true); // TRUE
 /* 7018: disable Web Notifications */
 user_pref("dom.webnotifications.enabled", false); // FALSE
 /* 7019: disable Push Notifications */
