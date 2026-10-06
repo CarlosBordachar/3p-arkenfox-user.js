@@ -45,8 +45,6 @@ user_pref("browser.shell.shortcutFavicons", false); // NO override, pero por las
 
 /*** [SECTION 1200]: HTTPS (SSL/TLS / OCSP / CERTS / HPKP) ***/
 
-/** OCSP (Online Certificate Status Protocol) ***/
-
 /** CERTS / HPKP (HTTP Public Key Pinning) ***/
 /* No se bien de que van, 1223 y 1224 */
 
